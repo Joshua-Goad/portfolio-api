@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio.Api.Controllers
 {
@@ -20,8 +20,8 @@ namespace Portfolio.Api.Controllers
                 new {
                     Title = "API Backend",
                     Description = "A cloud-hosted API powering the portfolio site.",
-                    Url = "https://joshuagoad-api.azurewebsites.net",
-                    Technologies = new[] { "C#", ".NET", "Swagger", "Azure App Service" }
+                    Url = "https://portfolio-api-production-bc5d.up.railway.app/",
+                    Technologies = new[] { "C#", ".NET", "Swagger", "Railway App Service" }
                 },
                 new {
                     Title = "Task Tracker App",
