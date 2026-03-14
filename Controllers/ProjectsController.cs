@@ -20,7 +20,7 @@ namespace Portfolio.Api.Controllers
                 new {
                     Title = "API Backend",
                     Description = "A cloud-hosted API powering the portfolio site.",
-                    Url = "https://portfolio-api-production-bc5d.up.railway.app/",
+                    Url = "https://portfolio-api-production-bc5d.up.railway.app/swagger/index.html",
                     Technologies = new[] { "C#", ".NET", "Swagger", "Railway App Service" }
                 },
                 new {
