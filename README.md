@@ -1,6 +1,6 @@
 # Portfolio API
 
-A lightweight, modular REST API powering my personal website (joshuagoad.com).Built with Node.js and Express, this API serves project data, portfolio information, and backend logic for future expansions.
+A lightweight, modular REST API powering my personal website (joshuagoad.com). Built with Node.js and Express, this API serves project data, portfolio information, and backend logic for future expansions.
 
 🚀 Features
 
@@ -16,6 +16,7 @@ Ready for CI/CD integration (Jenkins)
 
 Designed for forward-compatible expansion
 
+
 🛠 Tech Stack
 
 Node.js
@@ -29,6 +30,7 @@ JSON
 dotenv
 
 Azure/AWS hosting (depending on where you deploy)
+
 
 📡 API Endpoints
 
@@ -58,15 +60,18 @@ Returns profile information
 
 (Add or adjust based on your actual routes.)
 
+
 📦 Installation
 
 git clone https://github.com/Joshua-Goad/portfolio-api
 cd portfolio-api
 npm install
 
+
 ▶ Running the API
 
 npm start
+
 
 🔐 Environment Variables
 
@@ -74,6 +79,7 @@ Create a .env file:
 
 PORT=3000
 NODE_ENV=development
+
 
 📈 Future Enhancements
 
@@ -86,6 +92,7 @@ Add logging and monitoring
 Add automated tests
 
 Add Jenkins CI/CD pipeline
+
 
 📄 License
 
