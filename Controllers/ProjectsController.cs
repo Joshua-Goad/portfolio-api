@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Portfolio.Api.Models;
+using Portfolio.Api.Services;
 
 namespace Portfolio.Api.Controllers
 {
@@ -6,32 +8,31 @@ namespace Portfolio.Api.Controllers
     [Route("[controller]")]
     public class ProjectsController : ControllerBase
     {
+        private readonly ILogger<ProjectsController> _logger;
+        private readonly IProjectService _service;
+
+        public ProjectsController(ILogger<ProjectsController> logger, IProjectService service)
+        {
+            _logger = logger;
+            _service = service;
+        }
+
+
         [HttpGet]
         public IActionResult GetProjects()
         {
-            var projects = new[]
-            {
-                new {
-                    Title = "Portfolio Website",
-                    Description = "A full-stack portfolio built with React and ASP.NET Core.",
-                    Url = "https://joshuagoad.com",
-                    Technologies = new[] { "React", "C#", ".NET", "Azure" }
-                },
-                new {
-                    Title = "API Backend",
-                    Description = "A cloud-hosted API powering the portfolio site.",
-                    Url = "https://portfolio-api-production-bc5d.up.railway.app/swagger/index.html",
-                    Technologies = new[] { "C#", ".NET", "Swagger", "Railway App Service" }
-                },
-                new {
-                    Title = "Task Tracker App",
-                    Description = "A responsive React application for managing daily tasks with features including adding, editing, completing, and deleting tasks. Built with a clean neon-accented UI and localStorage persistence to save tasks between sessions.",
-                    Url = "/tasktracker",
-                    Technologies = new[] { "React", "JavaScript", "CSS" }
-                }
-            };
+            _logger.LogInformation("Fetching project list");
 
-            return Ok(projects);
+            try
+            {
+                var projects = _service.GetProjects();
+                return Ok(projects);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching project list");
+                return StatusCode(500, new { error = "An unexpected error occurred." });
+            }
         }
     }
 }
