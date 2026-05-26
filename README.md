@@ -1,48 +1,92 @@
-# portfolio-api
-This is the backend API for my personal portfolio website. It provides structured project data and supports integration with my React frontend. The API is built with ASP.NET Core and deployed on Railway.
+# Portfolio API
 
-Features
-- RESTful endpoints for portfolio project data
-- CORS configured for frontend integration
-- XML and JSON response support
-- Lightweight, fast, and easy to extend
-- Designed for deployment on Railway or Azure App Service
+A lightweight, modular REST API powering my personal website (joshuagoad.com).Built with Node.js and Express, this API serves project data, portfolio information, and backend logic for future expansions.
 
-Tech Stack
-- C# / ASP.NET Core
-- .NET 8 (or your version)
-- Railway for hosting
-- Swagger for API documentation
+🚀 Features
 
-Endpoints
-GET /projects
-Returns a list of portfolio projects including title, description, technologies, and URLs.
+RESTful JSON endpoints
 
-Local Development
-Requirements
-- .NET SDK installed
-- Visual Studio or VS Code
-Run locally
-dotnet run
+Modular routing and controller structure
 
+Environment-based configuration
 
-The API will start on:
-http://localhost:5000
+Scalable folder layout
 
+Ready for CI/CD integration (Jenkins)
 
+Designed for forward-compatible expansion
 
-Deployment
-This API is deployed using Railway.
-Railway requires the app to bind to the assigned port:
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-app.Urls.Add($"http://0.0.0.0:{port}");
+🛠 Tech Stack
 
+Node.js
 
+Express.js
 
-Future Enhancements
-- Add authentication for admin-only endpoints
-- Add database support for dynamic project management
-- Add additional endpoints for skills, contact, and resume data
+JavaScript
 
-License
-This project is open-source and available under the MIT License.
+JSON
+
+dotenv
+
+Azure/AWS hosting (depending on where you deploy)
+
+📡 API Endpoints
+
+Endpoint
+
+Method
+
+Description
+
+/projects
+
+GET
+
+Returns list of portfolio projects
+
+/status
+
+GET
+
+Health check endpoint
+
+/about
+
+GET
+
+Returns profile information
+
+(Add or adjust based on your actual routes.)
+
+📦 Installation
+
+git clone https://github.com/Joshua-Goad/portfolio-api
+cd portfolio-api
+npm install
+
+▶ Running the API
+
+npm start
+
+🔐 Environment Variables
+
+Create a .env file:
+
+PORT=3000
+NODE_ENV=development
+
+📈 Future Enhancements
+
+Add authentication
+
+Add database integration (PostgreSQL or MongoDB)
+
+Add logging and monitoring
+
+Add automated tests
+
+Add Jenkins CI/CD pipeline
+
+📄 License
+
+MIT License
