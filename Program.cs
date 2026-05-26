@@ -1,3 +1,5 @@
+using Portfolio.Api.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add Swagger
@@ -16,6 +18,9 @@ builder.Services.AddCors(options =>
 // Add controllers + XML support
 builder.Services.AddControllers()
     .AddXmlSerializerFormatters();
+
+// Register services (Dependency Injection)
+builder.Services.AddScoped<IProjectService, ProjectService>();
 
 var app = builder.Build();
 
