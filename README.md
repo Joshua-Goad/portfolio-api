@@ -1,36 +1,38 @@
-# Portfolio API
+# 📘 Portfolio API
 
-A lightweight, modular REST API powering my personal website (joshuagoad.com). Built with Node.js and Express, this API serves project data, portfolio information, and backend logic for future expansions.
+A lightweight, modular REST API powering my personal website (joshuagoad.com).Built with ASP.NET Core (.NET 8), this API serves project data, portfolio information, and backend logic for future expansions.Designed with clean architecture principles, environment‑based configuration, and forward‑compatible routing.
 
 🚀 Features
 
 RESTful JSON endpoints
 
-Modular routing and controller structure
+Modular controller-based architecture
 
-Environment-based configuration
+Environment-based configuration (appsettings.json)
 
-Scalable folder layout
+Strongly-typed configuration + dependency injection
 
-Ready for CI/CD integration (Jenkins)
+Scalable folder layout for future services
+
+Ready for CI/CD integration (Jenkins, GitHub Actions, Azure DevOps)
 
 Designed for forward-compatible expansion
 
-
 🛠 Tech Stack
 
-Node.js
+.NET 8 Web API
 
-Express.js
+C#
 
-JavaScript
+ASP.NET Core
 
-JSON
+JSON Serialization
 
-dotenv
+Dependency Injection
 
-Azure/AWS hosting (depending on where you deploy)
+Environment Configuration
 
+Azure/AWS Hosting (planned)
 
 📡 API Endpoints
 
@@ -58,42 +60,84 @@ GET
 
 Returns profile information
 
-(Add or adjust based on your actual routes.)
 
+🧱 Project Structure
+
+/Controllers
+  ProjectsController.cs
+  WeatherForecastController.cs
+/Properties
+appsettings.json
+appsettings.Development.json
+Program.cs
+Portfolio.Api.csproj
+Portfolio.Api.http
+
+💡 Tech Highlights
+
+Modern .NET 8 Web API
+
+Clean, modular controller structure
+
+JSON-based responses for all endpoints
+
+Environment-based configuration for dev/prod
+
+Dependency injection for scalable architecture
+
+Ready for CI/CD pipeline integration
+
+Forward-compatible design for additional services and endpoints
 
 📦 Installation
 
 git clone https://github.com/Joshua-Goad/portfolio-api
 cd portfolio-api
-npm install
-
+dotnet restore
 
 ▶ Running the API
 
-npm start
+dotnet run
 
+The API will start on the port defined in your .env or appsettings.json.
 
 🔐 Environment Variables
 
-Create a .env file:
+Create a .env file (if using environment overrides):
 
-PORT=3000
-NODE_ENV=development
+PORT=5000
+ASPNETCORE_ENVIRONMENT=Development
 
+Or configure directly in appsettings.json.
+
+🧪 Testing the API
+
+You can test endpoints using:
+
+Portfolio.Api.http (built-in HTTP file)
+
+Postman
+
+curl
+
+Example:
+
+curl https://localhost:5000/projects
 
 📈 Future Enhancements
 
-Add authentication
+Add authentication (JWT or OAuth)
 
 Add database integration (PostgreSQL or MongoDB)
 
-Add logging and monitoring
+Add logging and monitoring (Serilog, Seq, CloudWatch)
 
-Add automated tests
+Add automated tests (xUnit, NUnit)
 
 Add Jenkins CI/CD pipeline
 
+Add caching layer for performance
 
-📄 License
+📜 License
 
 MIT License
